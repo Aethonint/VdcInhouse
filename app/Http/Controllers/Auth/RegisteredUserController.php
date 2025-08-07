@@ -17,8 +17,12 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create():View|RedirectResponse
     {
+       
+         if (Auth::check()) {
+        return redirect()->route('admin.index'); // or your main page
+    }else
         return view('auth.register');
     }
 
