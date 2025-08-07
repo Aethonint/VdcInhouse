@@ -21,7 +21,11 @@ Route::middleware('auth')->group(function () {
 
        Route::get('/admin/home', [AdminDashboardController::class, 'index'])->name('admin.index');
      Route::get('/admin/logout', [AdminDashboardController::class, 'logout'])->name('admin.logout');
+     // admn profile edit
         Route::get('/admin/profile', [AdminDashboardController::class, 'adminprofile'])->name('admin.profile');
+ // admn change password edit
+        Route::get('/admin/edit', [AdminDashboardController::class, 'changepassword'])->name('admin.changepassword');
+        
     
 
 

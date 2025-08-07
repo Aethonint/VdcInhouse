@@ -188,14 +188,14 @@
                        </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{{route('admin.changepassword')}}">
                          <div class="d-flex align-items-center">
-                           <div class="setting-icon"><i class="bi bi-gear-fill"></i></div>
-                           <div class="setting-text ms-3"><span>Setting</span></div>
+                           <div class="setting-icon"><i class="bi bi-key-fill"></i></div>
+                           <div class="setting-text ms-3"><span>Change Password</span></div>
                          </div>
                        </a>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a class="dropdown-item" href="index2.html">
                          <div class="d-flex align-items-center">
                            <div class="setting-icon"><i class="bi bi-speedometer"></i></div>
@@ -218,7 +218,7 @@
                            <div class="setting-text ms-3"><span>Downloads</span></div>
                          </div>
                        </a>
-                    </li>
+                    </li> --}}
                     <li><hr class="dropdown-divider"></li>
                     <li>
                       <a class="dropdown-item" href="{{route('admin.logout')}}">
