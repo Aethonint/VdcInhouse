@@ -1,0 +1,80 @@
+.menu-title{
+    color: white;
+}.logo-icon {
+  width: 40px;
+  height: auto;
+}/* Remove border or spacing between parent and child menu */
+.sidebar-divider {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Light white line */
+  margin: 15px 30px; /* Equal top/bottom margin, and left/right spacing */
+   margin-top: 30px !important;
+ margin-bottom:30px !important;
+  height: 1px;
+  list-style: none;
+
+}.wrapper.toggled:not(.sidebar-hovered) .sidebar-wrapper .sidebar-divider {
+  display: none !important;
+}
+.top-header-heading{
+  color: whitesmoke !important;
+  margin-top: 10px;
+}
+/* Normal sidebar (expanded) */
+.wrapper:not(.toggled) .menu-title {
+  margin-left: 15px !important;
+}
+
+/* When collapsed (icon-only) */
+.wrapper.toggled .menu-title {
+  margin-left: 0; /* reset to avoid breaking icon alignment */
+}
+/* When sidebar is expanded */
+.wrapper:not(.toggled) .parent-icon {
+  margin-left: 10px;
+}
+
+/* When sidebar is collapsed (icon-only) */
+.wrapper.toggled .parent-icon {
+  margin-left: 0 !important;
+}.card-1{
+  background-color: #B9DAEE;
+}
+.card-2{
+  background-color:#ABBED8;
+}
+
+.card-3{
+  background-color:#E8ADBE;
+}
+
+.card-4{
+  background-color: #FFFFFF;
+}
+.sign-in-card{
+background-color: #00467A !important;
+} .btn-primary{
+  background-color: #00467A !important;
+}.forget-password{
+  color: #00467A !important;
+}.sign-up-here{
+   color: #00467A !important;
+}/* Default style when not checked (off) */
+.form-check-input {
+  background-color: #f8f9fa; /* Bootstrap default light gray */
+  border: 1px solid #ccc;
+}
+
+/* When checked (on) */
+.form-check-input:checked {
+  background-color: #00467A !important;
+  border-color: #00467A !important;
+}
+.form-control{
+  border: #00467A 1px solid ;
+}.form-control:focus {
+  border: 2px solid #00467A;
+  box-shadow: none; /* Optional: remove Bootstrap's blue shadow */
+}
+
+
+
