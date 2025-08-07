@@ -221,7 +221,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                      <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
+                      <a class="dropdown-item" href="{{route('admin.logout')}}">
                          <div class="d-flex align-items-center">
                            <div class="setting-icon"><i class="bi bi-lock-fill"></i></div>
                            <div class="setting-text ms-3"><span>Logout</span></div>

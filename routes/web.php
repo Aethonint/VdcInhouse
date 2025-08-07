@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -22,3 +22,4 @@ require __DIR__.'/auth.php';
 
 
     Route::get('/admin/home', [AdminDashboardController::class, 'index'])->name('admin.index');
+     Route::get('/admin/logout', [AdminDashboardController::class, 'logout'])->name('admin.logout');

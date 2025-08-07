@@ -5,33 +5,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="{{asset('adminui/assets/images/favicon-32x32.png')}}" type="image/png" />
-  <!--plugins-->
-  <link href="{{asset('adminui/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
-  <!-- Bootstrap CSS -->
-  <link href="{{asset('adminui/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/bootstrap-extended.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/style.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/icons.css')}}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  @include('admin.css')
 
-  <!-- loader-->
-	<link href="{{asset('adminui/assets/css/pace.min.css')}}" rel="stylesheet" />
-
-  <!--Theme Styles-->
-  <link href="{{asset('adminui/assets/css/dark-theme.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/light-theme.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/semi-dark.css')}}" rel="stylesheet" />
-  <link href="{{asset('adminui/assets/css/header-colors.css')}}" rel="stylesheet" />
-    <link href="{{asset('adminui/assets/css/custom.css')}}" rel="stylesheet" />
-
-  <title>Skodash - Bootstrap 5 Admin Template</title>
+      <title>Skodash - Bootstrap 5 Admin Template</title>
 </head>
 
 <body>
@@ -127,30 +103,7 @@
   <!--end wrapper-->
 
 
-  <!-- Bootstrap bundle JS -->
-  <script src="{{asset('adminui/assets/js/bootstrap.bundle.min.js')}}"></script>
-  <!--plugins-->
-  <script src="{{asset('adminui/assets/js/jquery.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/easyPieChart/jquery.easypiechart.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/peity/jquery.peity.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
-  <script src="{{asset('adminui/assets/js/pace.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
-	<script src="{{asset('adminui/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
-  <script src="{{asset('adminui/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-	<script src="{{asset('adminui/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
-  <!--app-->
-  <script src="{{asset('adminui/assets/js/app.js')}}"></script>
-  <script src="{{asset('adminui/assets/js/index.js')}}"></script>
-
-  <script>
-     new PerfectScrollbar(".best-product")
-     new PerfectScrollbar(".top-sellers-list")
-  </script>
-
+ @include('admin.js')
 </body>
 
 </html>
