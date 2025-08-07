@@ -13,18 +13,15 @@ class SuperAdminMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-   public function handle(Request $request, Closure $next)
-    {
-        if (!Auth::check()) {
-            // Not logged in
-            return redirect('/login');
-        }
+//    public function handle(Request $request, Closure $next)
+//     {
+//         // Check if user is authenticated and has role 'admin'
+//         if (Auth::check() && Auth::user()->role === 'admin') {
+//             return $next($request);
+//         }
 
-        if (Auth::user()->role === 'admin') {
-            // Logged in but not admin
-            return redirect()->route('admin.index');
-        }
+//         // Redirect to login if not admin
+//         return redirect()->route('login');
+//     }
 
-        return $next($request);
-    }
 } 

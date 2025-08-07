@@ -20,4 +20,9 @@ class AdminDashboardController extends Controller
 
         return redirect('/');
    }
+   public function adminprofile()
+   {
+      $user=Auth::user();
+      return view('profile.partials.update-profile-information-form',compact('user'));
+   }
 }

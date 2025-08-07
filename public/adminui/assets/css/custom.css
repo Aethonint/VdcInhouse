@@ -75,6 +75,11 @@ background-color: #00467A !important;
   border: 2px solid #00467A;
   box-shadow: none; /* Optional: remove Bootstrap's blue shadow */
 }
+/* .custom-container{
+  margin-top: 60px !important;
+  margin-left:280px;
+} */
 
-
-
+.container{
+  margin-top: 70px !important;
+}

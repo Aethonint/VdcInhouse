@@ -21,3 +21,11 @@
      new PerfectScrollbar(".best-product")
      new PerfectScrollbar(".top-sellers-list")
   </script>
+
+  <!--JQUERY PHONE MASK-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+  $('#phone').mask('+44 0000 000 000');
+</script>
+  

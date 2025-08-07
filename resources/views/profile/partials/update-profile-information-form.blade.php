@@ -1,4 +1,4 @@
-<section>
+{{-- <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Profile Information') }}
@@ -61,4 +61,101 @@
             @endif
         </div>
     </form>
-</section>
+</section> --}}
+@extends('admin.app')
+
+@section('content')
+<div class="container py-5 mt-5">
+    <div class=" justify-content-center">
+        <div class="col-12 col-md-6 ">
+            <div class="card  shadow border-0">
+                <div class="card-body bg-white p-4">
+                    <h2 class="card-title mb-3">Profile Information</h2>
+                    <p class="text-muted mb-4">Update your account's profile information and email address.</p>
+
+                    {{-- Email Verification Form --}}
+                    <form id="send-verification" method="POST" action="{{ route('verification.send') }}">
+                        @csrf
+                    </form>
+
+                    {{-- Profile Update Form --}}
+                    <form method="POST" action="{{ route('profile.update') }}">
+                        @csrf
+                        @method('PATCH')
+                        <div class="row">
+ <div class="mb-3 ">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" name="first_name" id="first_name" class="form-control"
+                                value="{{ old('first_name', $user->first_name ?? '') }}" required>
+                            @error('first_name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3 ">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" name="last_name" id="last_name" class="form-control"
+                                value="{{ old('last_name', $user->last_name ?? '') }}" required>
+                            @error('last_name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        </div>
+
+                       
+<div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" name="phone" id="phone" class="form-control"
+        value="{{ old('phone', $user->phone ?? '') }}" required placeholder="+44 ____ ___ ___">
+    @error('phone')
+        <div class="text-danger">{{ $message }}</div>
+    @enderror
+</div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" name="email" id="email" disabled readonly class="form-control"
+                                value="{{ old('email', $user->email) }}" required>
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+
+                            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+                                <div class="mt-2">
+                                    <p class="text-warning">
+                                        Your email address is unverified.
+                                        <button form="send-verification" class="btn btn-link p-0 m-0 align-baseline">
+                                            Click here to re-send the verification email.
+                                        </button>
+                                    </p>
+
+                                    @if (session('status') === 'verification-link-sent')
+                                        <p class="text-success">
+                                            A new verification link has been sent to your email address.
+                                        </p>
+                                    @endif
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+
+                            @if (session('status') === 'profile-updated')
+                                <p class="text-success mb-0">Saved.</p>
+                            @endif
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@push('scripts')
+ 
+@endpush
+
+@endsection
