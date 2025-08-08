@@ -19,7 +19,7 @@
 
                         <div class="mb-3">
                             <label for="update_password_current_password" class="form-label">Current Password</label>
-                            <input id="update_password_current_password" name="current_password" type="password" class="form-control" autocomplete="current-password">
+                            <input id="update_password_current_password" name="current_password" type="password" class="form-control" placeholder="Enter Current Password" autocomplete="current-password">
                             @error('current_password', 'updatePassword')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -27,7 +27,7 @@
 
                         <div class="mb-3">
                             <label for="update_password_password" class="form-label">New Password</label>
-                            <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password">
+                            <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password" placeholder="Enter New Password">
                             @error('password', 'updatePassword')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -35,7 +35,7 @@
 
                         <div class="mb-3">
                             <label for="update_password_password_confirmation" class="form-label">Confirm Password</label>
-                            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password">
+                            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password"placeholder="Confirm New Password">
                             @error('password_confirmation', 'updatePassword')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

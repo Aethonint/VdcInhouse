@@ -220,21 +220,21 @@
                        </a>
                     </li> --}}
                     <li><hr class="dropdown-divider"></li>
-                  <li>
-    <form method="POST" action="{{ route('logout') }}">
+<li >
+    <form method="POST" action="{{ route('logout') }}" style="margin:0;">
         @csrf
-        <button type="submit" class="dropdown-item" style="border:none; background:none; padding:0;">
-            <div class="d-flex align-items-center">
-                <div class="setting-icon">
-                    <i class="bi bi-lock-fill"></i>
-                </div>
-                <div class="setting-text ms-3">
-                    <span>Logout</span>
-                </div>
+        <button type="submit" class="dropdown-item d-flex align-items-center" style="width: 100%; border: none; background: none; padding: 0.25rem 0.70rem;">
+            <div class="setting-icon">
+                <i class="bi bi-lock-fill"></i>
+            </div>
+            <div class="setting-text ms-3">
+                <span>Logout</span>
             </div>
         </button>
     </form>
 </li>
+
+
 
                 </ul>
               </li>
