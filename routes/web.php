@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +61,12 @@ Route::middleware('auth')->group(function () {
 */
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/admin/home', [AdminDashboardController::class, 'index'])->name('admin.index');
+     Route::get('/admin/Dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/profile', [AdminDashboardController::class, 'adminprofile'])->name('admin.profile');
     Route::get('/admin/edit', [AdminDashboardController::class, 'changepassword'])->name('admin.changepassword');
+    // Vehicle List Index
+    Route::get('/vehicle/list', [VehicleController::class, 'index'])->name('vehicle.index');
+   
 });
 
 /*

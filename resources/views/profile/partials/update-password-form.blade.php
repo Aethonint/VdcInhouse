@@ -7,7 +7,7 @@
 </style>
 <div class="container py-5 mt-5">
     <div class="justify-content-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 ">
             <div  class="card shadow rounded-card ">
                 <div class="card-body bg-white p-4 rounded-card ">
                     <h2 class="card-title mb-3">Update Password</h2>
@@ -17,7 +17,7 @@
                         @csrf
                         @method('PUT')
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-md-6">
                             <label for="update_password_current_password" class="form-label">Current Password</label>
                             <input id="update_password_current_password" name="current_password" type="password" class="form-control" placeholder="Enter Current Password" autocomplete="current-password">
                             @error('current_password', 'updatePassword')
@@ -25,7 +25,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-md-6">
                             <label for="update_password_password" class="form-label">New Password</label>
                             <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password" placeholder="Enter New Password">
                             @error('password', 'updatePassword')
@@ -33,7 +33,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-md-6">
                             <label for="update_password_password_confirmation" class="form-label">Confirm Password</label>
                             <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password"placeholder="Confirm New Password">
                             @error('password_confirmation', 'updatePassword')

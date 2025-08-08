@@ -4,15 +4,22 @@
              <!-- <h4>Fleet</h4> -->
             </div>
             <div>
-              <h4 class="logo-text"> <img src="{{asset('adminui/assets/images/avatars/fleetlogo.png')}}" class="logo-icon" alt="logo icon"></h4>
-            </div>
+    <h4 class="logo-text">
+        <a href="{{ route('admin.dashboard') }}">
+            <img src="{{ asset('adminui/assets/images/avatars/fleetlogo.png') }}" 
+                 class="logo-icon" 
+                 alt="logo icon">
+        </a>
+    </h4>
+</div>
+
             <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
             </div>
           </div>
           <!--navigation-->
           <ul class="metismenu" id="menu">
             <li>
-              <a href="javascript:;" class="has-arrow">
+              <a href="{{route('admin.dashboard')}}" class="">
                 <div class="parent-icon"><i class="bi bi-grid"></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
@@ -34,7 +41,7 @@
                 <div class="menu-title">Vehicle Checks</div>
               </a>
               <ul>
-                <li> <a href="widgets-static-widgets.html"><i class="bi bi-arrow-right-short"></i>Static Widgets</a>
+                <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Vehicle List</a>
                 </li>
                
               </ul>

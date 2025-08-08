@@ -30,4 +30,8 @@ class AdminDashboardController extends Controller
       $user=Auth::user();
       return view('profile.partials.update-password-form',compact('user'));
    }
+   public function dashboard()
+   {
+      return view('admin.dashboard');
+   }
 }

@@ -13,6 +13,7 @@
   <script src="{{asset('adminui/assets/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
   <script src="{{asset('adminui/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
 	<script src="{{asset('adminui/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('adminui/assets/js/table-datatable.js')}}"></script>
   <!--app-->
   <script src="{{asset('adminui/assets/js/app.js')}}"></script>
   <script src="{{asset('adminui/assets/js/index.js')}}"></script>

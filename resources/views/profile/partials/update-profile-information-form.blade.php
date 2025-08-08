@@ -67,9 +67,9 @@
 @section('content')
 <div class="container py-5 mt-5">
     <div class=" justify-content-center">
-        <div class="col-12 col-md-6 ">
+        <div class="col-12  ">
             <div class="card  shadow  rounded-card">
-                <div class="card-body bg-white p-4 rounded-card">
+                <div class="card-body bg-white p-4 rounded-card  ">
                     <h2 class="card-title mb-3">Profile Information</h2>
                     <p class="text-muted mb-4">Update your account's profile information and email address.</p>
 
@@ -82,8 +82,8 @@
                     <form method="POST" action="{{ route('profile.update') }}">
                         @csrf
                         @method('PATCH')
-                        <div class="row">
- <div class="mb-3 ">
+                      
+ <div class="mb-3 col-md-6 ">
                             <label for="first_name" class="form-label">First Name</label>
                             <input type="text" name="first_name" id="first_name" class="form-control"
                                 value="{{ old('first_name', $user->first_name ?? '') }}" required>
@@ -92,7 +92,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3 ">
+                        <div class="mb-3  col-md-6">
                             <label for="last_name" class="form-label">Last Name</label>
                             <input type="text" name="last_name" id="last_name" class="form-control"
                                 value="{{ old('last_name', $user->last_name ?? '') }}" required>
@@ -101,10 +101,10 @@
                             @enderror
                         </div>
 
-                        </div>
+                       
 
                        
-<div class="mb-3">
+<div class="mb-3 col-md-6">
     <label for="phone" class="form-label">Phone</label>
     <input type="text" name="phone" id="phone" class="form-control"
         value="{{ old('phone', $user->phone ?? '') }}" required placeholder="+44 ____ ___ ___">
@@ -113,7 +113,7 @@
     @enderror
 </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" name="email" id="email" disabled readonly class="form-control"
                                 value="{{ old('email', $user->email) }}" required>
