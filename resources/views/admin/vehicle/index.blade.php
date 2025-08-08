@@ -15,7 +15,7 @@
 						</nav>
 					</div>
 					<div class="ms-auto">
-    <a class="btn btn-primary " href="">
+    <a class="btn btn-primary " href="{{route('vehicle.create')}}">
         <i class="bi bi-plus"></i> Add Vehicle
     </a>
 </div>

@@ -66,6 +66,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/admin/edit', [AdminDashboardController::class, 'changepassword'])->name('admin.changepassword');
     // Vehicle List Index
     Route::get('/vehicle/list', [VehicleController::class, 'index'])->name('vehicle.index');
+      Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
    
 });
 

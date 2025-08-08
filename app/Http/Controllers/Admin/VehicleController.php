@@ -11,4 +11,8 @@ class VehicleController extends Controller
     {
         return view('admin.vehicle.index');
     }
+    public function create()
+    {
+        return view('admin.vehicle.create');
+    }
 }
