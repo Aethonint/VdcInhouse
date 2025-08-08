@@ -16,9 +16,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View|RedirectResponse
     {
-         if (Auth::check()) {
-        return redirect()->route('admin.index')->with('success', 'Your action was successful!'); // or your main page
-    }else
+        
+
         return view('auth.login');
     }
 
@@ -32,10 +31,12 @@ class AuthenticatedSessionController extends Controller
 
     $user = Auth::user();
 
-    if ($user->role === 'admin') {
+   // Role-based redirect
+    if (Auth::user()->role === 'admin') {
         return redirect()->route('admin.index');
+    } elseif (Auth::user()->role === 'user') {
+        return redirect()->route('user.index');
     }
-
     // Redirect non-admin users to login or another page
     return redirect()->route('login');
 }

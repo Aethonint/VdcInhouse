@@ -11,9 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-    //  $middleware->alias([
-    //        'onlysuperadmin' => \App\Http\Middleware\SuperAdminMiddleware::class,
-    //      ]);
+     $middleware->alias([
+           'checkRole' => \App\Http\Middleware\CheckRole::class,
+            'redirectLoggedIn' => \App\Http\Middleware\RedirectLoggedInUsers::class,
+          ]);
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {

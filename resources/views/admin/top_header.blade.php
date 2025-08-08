@@ -220,14 +220,22 @@
                        </a>
                     </li> --}}
                     <li><hr class="dropdown-divider"></li>
-                    <li>
-                      <a class="dropdown-item" href="{{route('admin.logout')}}">
-                         <div class="d-flex align-items-center">
-                           <div class="setting-icon"><i class="bi bi-lock-fill"></i></div>
-                           <div class="setting-text ms-3"><span>Logout</span></div>
-                         </div>
-                       </a>
-                    </li>
+                  <li>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="dropdown-item" style="border:none; background:none; padding:0;">
+            <div class="d-flex align-items-center">
+                <div class="setting-icon">
+                    <i class="bi bi-lock-fill"></i>
+                </div>
+                <div class="setting-text ms-3">
+                    <span>Logout</span>
+                </div>
+            </div>
+        </button>
+    </form>
+</li>
+
                 </ul>
               </li>
              
