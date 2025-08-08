@@ -1,11 +1,15 @@
 @extends('admin.app')
 
 @section('content')
+<style>
+  
+
+</style>
 <div class="container py-5 mt-5">
     <div class="justify-content-center">
         <div class="col-12 col-md-6">
-            <div class="card shadow border-0">
-                <div class="card-body bg-white p-4">
+            <div  class="card shadow rounded-card ">
+                <div class="card-body bg-white p-4 rounded-card ">
                     <h2 class="card-title mb-3">Update Password</h2>
                     <p class="text-muted mb-4">Ensure your account is using a long, random password to stay secure.</p>
 

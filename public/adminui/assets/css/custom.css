@@ -82,4 +82,7 @@ background-color: #00467A !important;
 
 .container{
   margin-top: 70px !important;
+  border-top:  2px solid #00467A;
+}    .rounded-card{
+  border-radius: 30px !important;
 }

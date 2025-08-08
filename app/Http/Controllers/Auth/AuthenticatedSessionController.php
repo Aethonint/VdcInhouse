@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
     public function create(): View|RedirectResponse
     {
          if (Auth::check()) {
-        return redirect()->route('admin.index'); // or your main page
+        return redirect()->route('admin.index')->with('success', 'Your action was successful!'); // or your main page
     }else
         return view('auth.login');
     }

@@ -29,3 +29,26 @@
   $('#phone').mask('+44 0000 000 000');
 </script>
   
+
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    toastr.options = {
+        "positionClass": "toast-top-right",
+        "timeOut": "5000"
+         "progressBar": true, // ✅ This enables the bottom line
+
+    };
+</script>
+<script>
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}");
+    @elseif(Session::has('error'))
+        toastr.error("{{ Session::get('error') }}");
+    @elseif(Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
+    @elseif(Session::has('warning'))
+        toastr.warning("{{ Session::get('warning') }}");
+    @endif
+</script>

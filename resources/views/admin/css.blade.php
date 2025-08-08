@@ -24,3 +24,33 @@
   <link href="{{asset('adminui/assets/css/header-colors.css')}}" rel="stylesheet" />
     <link href="{{asset('adminui/assets/css/custom.css')}}" rel="stylesheet" />
 
+<!-- Toastr CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+
+<style>
+    /* Override success toast background */
+    .toast-success {
+        background-color: #000000 !important; /* Dark green */
+        color: #ff0000 !important;
+    }
+
+    /* Optional: make text bold or change font */
+    .toast-success .toast-message {
+        font-weight: bold;
+    }#toast-container.toast-top-right {
+      
+        right: 12px; /* Optional: adjust right spacing */
+    }    /* Remove background and shadow from all toasts */
+      /* Make sure toast container is fixed and high z-index */
+   
+
+    /* Optional: add subtle shadow for visibility */
+     #toast-container .toast-progress {
+        background-color: #ffffff !important; /* Dark green */
+        height: 4px !important; /* Thicker line */
+    }
+
+       
+
+
+</style>
