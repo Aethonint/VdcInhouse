@@ -1,11 +1,8 @@
 @extends('admin.app')
 
 @section('content')
-<style>
-  
 
-</style>
-<div class="container py-5 mt-5">
+   <main class="page-content">
     <div class="justify-content-center">
         <div class="col-12 ">
             <div  class="card shadow rounded-card ">
@@ -42,10 +39,10 @@
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary mt-3">Update</button>
 
                             @if (session('status') === 'password-updated')
-                                <p class="text-success mb-0">Password Updated.</p>
+                                <p class="text-success mb-0 ">Password Updated.</p>
                             @endif
                         </div>
                     </form>

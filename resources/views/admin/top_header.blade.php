@@ -163,7 +163,7 @@
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                   <div class="user-setting d-flex align-items-center gap-1">
                     <img src="{{asset('adminui/assets/images/avatars/avatar-1.png')}}" class="user-img" alt="">
-                    <div class="user-name d-none d-sm-block">Jhon Deo</div>
+                    <div class="user-name d-none d-sm-block">Admin</div>
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -172,8 +172,8 @@
                        <div class="d-flex align-items-center">
                           <img src="{{asset('adminui/assets/images/avatars/avatar-1.png')}}" alt="" class="rounded-circle" width="60" height="60">
                           <div class="ms-3">
-                            <h6 class="mb-0 dropdown-user-name">Jhon Deo</h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                            <h6 class="mb-0 dropdown-user-name">Admin</h6>
+                           
                           </div>
                        </div>
                      </a>

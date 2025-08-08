@@ -369,7 +369,7 @@ a {
      /* background-color:#002B66 !important; */
 	   background-color:#00467A !important;
     background-clip: padding-box;
-    border-right: 1px solid #e2e3e4;
+  
     transition: all .2s;
     z-index: 16;
 }

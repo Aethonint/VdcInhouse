@@ -65,7 +65,7 @@
 @extends('admin.app')
 
 @section('content')
-<div class="container py-5 mt-5">
+   <main class="page-content">
     <div class=" justify-content-center">
         <div class="col-12  ">
             <div class="card  shadow  rounded-card">
@@ -139,8 +139,8 @@
                             @endif
                         </div>
 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <button type="submit" class="btn btn-primary mt-3">Update</button>
 
                             @if (session('status') === 'profile-updated')
                                 <p class="text-success mb-0">Saved.</p>
