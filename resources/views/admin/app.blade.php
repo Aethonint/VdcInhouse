@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   @include('admin.css')
 
-      <title>Skodash - Bootstrap 5 Admin Template</title>
+      <title>FleetEdge</title>
 </head>
 
 <body>

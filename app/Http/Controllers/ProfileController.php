@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
     $request->user()->save();
 
-    return Redirect::route('admin.profile')->with('status', 'profile-updated');
+    return Redirect::route('admin.profile')->with('success', 'profile-updated-success');
 }
 
 

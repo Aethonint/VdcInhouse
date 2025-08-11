@@ -100,6 +100,24 @@ background-color: #00467A !important;
   border-radius: 30px !important;
   border-top: 1px solid  #00467A;
 }
+.card-title{
+  font-weight: 700;
+  font-size: 24px;
+}
+
+
+/* Change background color of table heading */
+    #example thead th {
+        background-color:rgb(56, 113, 193); /* Blue background */
+        color: white; /* White text */
+        text-align: center; /* Optional: center text */
+    }
+
+    /* Optional: Change table footer heading color too */
+    #example tfoot th {
+        background-color: #343a40; /* Dark gray */
+        color: #fff; /* White text */
+    }
 
 
 

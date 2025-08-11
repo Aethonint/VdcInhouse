@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\VehicleController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Landing & Login Routes
