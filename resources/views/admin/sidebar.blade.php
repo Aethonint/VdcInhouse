@@ -41,12 +41,12 @@
                 <div class="menu-title">Vehicle Checks</div>
               </a>
               <ul>
-                <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Today's Checks</a>
+                <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Today's Checks</a>
                 </li>
-                 <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Missed / Incomplete</a>
+                 <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Missed / Incomplete</a>
                 </li>
                
-               <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Full Check History</a>
+               <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Full Check History</a>
                 </li>
                
                 
@@ -61,7 +61,7 @@
                 <div class="menu-title">Vehicles</div>
               </a>
               <ul>
-                <li> <a href="ecommerce-products-list.html"><i class="bi bi-arrow-right-short"></i>Vehicle List</a>
+                <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Vehicle List</a>
                 </li>
                 <li> <a href="ecommerce-products-grid.html"><i class="bi bi-arrow-right-short"></i>Add New Vehicle</a>
                 </li>

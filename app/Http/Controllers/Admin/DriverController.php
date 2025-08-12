@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\text;
+
 class DriverController extends Controller
 {
     public function index()
@@ -38,8 +40,8 @@ class DriverController extends Controller
         }
 
         $validated = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'nullable',
+          'first_name' => 'required|alpha',
+'last_name' => 'nullable|alpha',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required',
             'password' => 'required|min:6',
@@ -101,8 +103,8 @@ class DriverController extends Controller
     {
        
         $validated = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'nullable',
+            'first_name' => 'required|alpha',
+            'last_name' => 'nullable|alpha',
             'email' => 'required|email|unique:users,email,' . $id,
             'phone' => 'required',
             'password' => 'nullable|min:6',

@@ -141,5 +141,40 @@ border-bottom: 1px solid #00467A;
   color: white;
   border: 1px solid #00467A; /* Keep the same border width, change color */
 
+}.card-subtitle{
+    font-weight: 500;
+  font-size: 24px;
+  color: #00467A;
 }
 
+
+
+
+/* Pagination link default color */
+.pagination .page-link {
+    color: #00467A;
+    border-color: #00467A;
+}
+
+/* Pagination link hover and focus */
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+    color: white;
+    background-color: #00467A;
+    border-color: #00467A;
+}
+
+/* Active pagination link */
+.pagination .page-item.active .page-link {
+    background-color: #00467A;
+    border-color: #00467A;
+    color: white;
+}
+
+/* Disabled pagination link */
+.pagination .page-item.disabled .page-link {
+    color: #cccccc;
+    pointer-events: none;
+    background-color: transparent;
+    border-color: #dddddd;
+}

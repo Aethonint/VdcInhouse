@@ -71,3 +71,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+
+
+
+{{-- JS to Show Preview --}}
+
+<script>
+    document.getElementById('pictures').addEventListener('change', function (event) {
+        let previewContainer = document.getElementById('picture-preview');
+        previewContainer.innerHTML = ''; // Clear previous previews
+
+        Array.from(event.target.files).forEach(file => {
+            if (file.type.startsWith('image/')) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('img-thumbnail');
+                    img.style.width = '30px';
+                    img.style.height = '30px';
+                    img.style.objectFit = 'cover';
+                    previewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
+
+

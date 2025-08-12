@@ -67,9 +67,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
      Route::get('/admin/Dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/profile', [AdminDashboardController::class, 'adminprofile'])->name('admin.profile');
     Route::get('/admin/edit', [AdminDashboardController::class, 'changepassword'])->name('admin.changepassword');
-    // Vehicle List Index
-    Route::get('/vehicle/list', [VehicleController::class, 'index'])->name('vehicle.index');
-      Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
+  
       // Drivers section all routes
       Route::get('/drivers', [DriverController::class, 'index'])->name('driver.index');
       Route::get('/drivers/create', [DriverController::class, 'create'])->name('driver.create');
@@ -79,6 +77,15 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
             Route::PUT('/drivers/update/{id}', [DriverController::class, 'update'])->name('driver.update');
          Route::delete('/drivers/delete/{id}', [DriverController::class, 'destroy'])->name('driver.destroy');
            //END Drivers section all routes
+             // Vehicle List Index start
+    Route::get('/vehicle', [VehicleController::class, 'index'])->name('vehicle.index');
+      Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
+       Route::POST('/vehicle/store', [VehicleController::class, 'store'])->name('vehicle.store');
+        Route::get('/vehicle/show/{id}', [VehicleController::class, 'show'])->name('vehicle.show');
+         Route::get('/vehicle/edit/{id}', [VehicleController::class, 'edit'])->name('vehicle.edit');
+          Route::PUT('/vehicle/update/{id}', [VehicleController::class, 'update'])->name('vehicle.update');
+           Route::DELETE('/vehicle/destroy/{id}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
+           // Vehicle List Index  END
       
       
 

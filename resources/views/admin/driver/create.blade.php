@@ -58,7 +58,7 @@
 </div>
                         </div>
 
-                        <h5>Classifications</h5>
+                        <h5 class="card-subtitle mb-2">Classifications</h5>
                         <div class="mb-3">
                             <label>
                                 <input type="radio" name="classification" value="operator" {{ old('classification') == 'operator' ? 'checked' : '' }}> Operator
@@ -74,7 +74,7 @@
                             @enderror
                         </div>
 
-                        <h5>Personal Details</h5>
+                        <h5 class="card-subtitle mb-2">Personal Details</h5>
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label>Job Title</label>

@@ -25,7 +25,7 @@
         <hr />
         <div class="card">
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive ">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
@@ -66,19 +66,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Employee No</th>
-                                <th>First Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Job Title</th>
-                                <th>Action</th>
-                            </tr>
-
-
-                        </tfoot>
+                     
                     </table>
                 </div>
             </div>
