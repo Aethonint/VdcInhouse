@@ -70,10 +70,16 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     // Vehicle List Index
     Route::get('/vehicle/list', [VehicleController::class, 'index'])->name('vehicle.index');
       Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
-      // Drivers section all roues
+      // Drivers section all routes
       Route::get('/drivers', [DriverController::class, 'index'])->name('driver.index');
       Route::get('/drivers/create', [DriverController::class, 'create'])->name('driver.create');
         Route::POST('/drivers/store', [DriverController::class, 'store'])->name('driver.store');
+            Route::get('/drivers/show/{id}', [DriverController::class, 'show'])->name('driver.show');
+        Route::get('/drivers/edit/{id}', [DriverController::class, 'edit'])->name('driver.edit');
+            Route::PUT('/drivers/update/{id}', [DriverController::class, 'update'])->name('driver.update');
+         Route::delete('/drivers/delete/{id}', [DriverController::class, 'destroy'])->name('driver.destroy');
+           //END Drivers section all routes
+      
       
 
 
@@ -87,6 +93,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
 */
 Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/user/home', [UserController::class, 'index'])->name('user.index');
+    
 });
 
 require __DIR__.'/auth.php';

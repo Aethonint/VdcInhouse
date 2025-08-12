@@ -119,5 +119,27 @@ background-color: #00467A !important;
         color: #fff; /* White text */
     }
 
+    .drivers-details{
+      border: 1px solid #00467A;
+      border-radius: 10px;
+    }.driver-information{
+      font-weight:400;
+      font-size: 18px;
+      color:#00467A ;
+      
+    }.p-border{
+border-bottom: 1px solid #00467A;
+    }.custom-btn-success {
+  background-color: #00467A;
+  color: white;
+  border: 1px solid #00467A; /* Define the border here */
 
+}
+
+.custom-btn-success:hover {
+  background-color: #00467A; /* A darker shade for the hover effect */
+  color: white;
+  border: 1px solid #00467A; /* Keep the same border width, change color */
+
+}
 

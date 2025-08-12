@@ -18,11 +18,14 @@ class Driver extends Model
         'address',
         'is_operator',
         'is_employee',
-        'is_technician'
+        'is_technician',
+        'classification'
     ];
 
+  
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+
 }
