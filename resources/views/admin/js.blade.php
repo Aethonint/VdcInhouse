@@ -53,3 +53,21 @@
         toastr.warning("{{ Session::get('warning') }}");
     @endif
 </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const emailField = document.querySelector('input[name="email"]');
+    const passwordField = document.getElementById('password');
+
+    emailField.addEventListener('input', function () {
+        if (emailField.value.length > 3) {
+            // Generate random password
+            const randomPass = Math.random().toString(36).slice(-8); // 8 chars
+            passwordField.value = randomPass;
+        } else {
+            passwordField.value = '';
+        }
+    });
+});
+</script>

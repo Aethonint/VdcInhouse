@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\UserController;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\VehicleController;
+
 
 
 /*
@@ -68,6 +70,13 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     // Vehicle List Index
     Route::get('/vehicle/list', [VehicleController::class, 'index'])->name('vehicle.index');
       Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
+      // Drivers section all roues
+      Route::get('/drivers', [DriverController::class, 'index'])->name('driver.index');
+      Route::get('/drivers/create', [DriverController::class, 'create'])->name('driver.create');
+        Route::POST('/drivers/store', [DriverController::class, 'store'])->name('driver.store');
+      
+
+
    
 });
 

@@ -67,7 +67,7 @@
                 <div class="menu-title">Drivers</div>
               </a>
               <ul>
-                <li> <a href="component-alerts.html"><i class="bi bi-arrow-right-short"></i>Alerts</a>
+                <li> <a href="{{route('driver.index')}}"><i class="bi bi-arrow-right-short"></i>Driver List</a>
                 </li>
                 <li> <a href="component-accordions.html"><i class="bi bi-arrow-right-short"></i>Accordions</a>
                 </li>
