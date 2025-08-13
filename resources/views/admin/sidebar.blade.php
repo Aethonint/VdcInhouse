@@ -63,8 +63,6 @@
               <ul>
                 <li> <a href="{{route('vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Vehicle List</a>
                 </li>
-                <li> <a href="ecommerce-products-grid.html"><i class="bi bi-arrow-right-short"></i>Add New Vehicle</a>
-                </li>
                  <li> <a href="ecommerce-products-grid.html"><i class="bi bi-arrow-right-short"></i>Vehicle Documents</a>
                 </li>
                  <li> <a href="ecommerce-products-grid.html"><i class="bi bi-arrow-right-short"></i>Wash Tracker </a>
@@ -81,7 +79,7 @@
               <ul>
                 <li> <a href="{{route('driver.index')}}"><i class="bi bi-arrow-right-short"></i>Driver List</a>
                 </li>
-                <li> <a href="component-accordions.html"><i class="bi bi-arrow-right-short"></i>Assign Vehicle</a>
+                <li> <a href="{{route('assign_vehicle.index')}}"><i class="bi bi-arrow-right-short"></i>Assign Vehicle</a>
                 </li>
                  <li> <a href="component-accordions.html"><i class="bi bi-arrow-right-short"></i>Driver Documents</a>
                 </li>

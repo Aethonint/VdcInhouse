@@ -65,12 +65,13 @@ class DriverController extends Controller
             'email' => $validated['email'],
             'phone' => $validated['phone'],
             'password' => Hash::make($validated['password']),
-            'role' => 'user'
+            'role' => 'user',
+               'classification' => $validated['classification'],
         ]);
 
         Driver::create([
             'user_id' => $user->id,
-            'classification' => $validated['classification'],
+         
             'job_title' => $validated['job_title'],
             'dob' => $validated['dob'],
             'employee_no' => $validated['employee_no'],
@@ -129,10 +130,11 @@ class DriverController extends Controller
             'email' => $validated['email'],
             'phone' => $validated['phone'],
             'password' => $validated['password'] ? Hash::make($validated['password']) : $user->password,
+             'classification' => $validated['classification'],
         ]);
 
         $user->driver()->update([
-            'classification' => $validated['classification'],
+           
             'job_title' => $validated['job_title'],
             'dob' => $validated['dob'],
             'employee_no' => $validated['employee_no'],

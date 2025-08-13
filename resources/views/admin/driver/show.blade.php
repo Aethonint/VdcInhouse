@@ -47,7 +47,7 @@
                                 <strong>Job Title:</strong> {{ $driver->driver->job_title ?? 'N/A' }}
                             </div>
                             <div class="col-md-6">
-                                <strong>Classification:</strong> {{ $driver->driver->classification ?? 'N/A' }}
+                                <strong>Classification:</strong> {{ $driver->classification ?? 'N/A' }}
                             </div>
                         </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AssignVehicleController;
 use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminDashboardController;
@@ -86,6 +87,15 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
           Route::PUT('/vehicle/update/{id}', [VehicleController::class, 'update'])->name('vehicle.update');
            Route::DELETE('/vehicle/destroy/{id}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
            // Vehicle List Index  END
+              //Start assing vehicles
+    Route::get('/assign/vehicle', [AssignVehicleController::class, 'index'])->name('assign_vehicle.index');
+      Route::get('/assign/vehicle/create', [AssignVehicleController::class, 'create'])->name('assign_vehicle.create');
+       Route::POST('/assign/vehicle/store', [AssignVehicleController::class, 'store'])->name('assign_vehicle.store');
+        Route::get('/assign/vehicle/show/{id}', [AssignVehicleController::class, 'show'])->name('assign_vehicle.show');
+         Route::get('/assign/vehicle/edit/{id}', [AssignVehicleController::class, 'edit'])->name('assign_vehicle.edit');
+          Route::PUT('/assign/vehicle/update/{id}', [AssignVehicleController::class, 'update'])->name('assign_vehicle.update');
+           Route::DELETE('/assign/vehicle/destroy/{id}', [AssignVehicleController::class, 'destroy'])->name('assign_vehicle.destroy');
+           // End assign vehicles
       
       
 

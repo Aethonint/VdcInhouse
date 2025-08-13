@@ -62,15 +62,15 @@
 <div class="mb-3">
     <label>
         <input type="radio" name="classification" value="operator"
-            {{ old('classification', $driver->driver->classification ?? '') == 'operator' ? 'checked' : '' }}> Operator
+            {{ old('classification', $driver->classification ?? '') == 'operator' ? 'checked' : '' }}> Operator
     </label>
     <label class="ms-3">
         <input type="radio" name="classification" value="employee"
-            {{ old('classification', $driver->driver->classification ?? '') == 'employee' ? 'checked' : '' }}> Employee
+            {{ old('classification', $driver->classification ?? '') == 'employee' ? 'checked' : '' }}> Employee
     </label>
     <label class="ms-3">
         <input type="radio" name="classification" value="technician"
-            {{ old('classification', $driver->driver->classification ?? '') == 'technician' ? 'checked' : '' }}> Technician
+            {{ old('classification', $driver->classification ?? '') == 'technician' ? 'checked' : '' }}> Technician
     </label>
     @error('classification')
         <div><small class="text-danger">{{ $message }}</small></div>

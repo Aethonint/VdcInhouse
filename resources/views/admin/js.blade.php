@@ -101,3 +101,17 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Simplified Select2 initialization
+        $('.select2-searchable').select2({
+            width: '100%',
+            placeholder: 'Search...',
+            minimumInputLength: 1
+        });
+    });
+</script>

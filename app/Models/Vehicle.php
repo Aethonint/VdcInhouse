@@ -17,6 +17,8 @@ class Vehicle extends Model
     ];
 
     protected $casts = [
-        'pictures' => 'array', // Automatically cast JSON to array
+        'pictures' => 'array', 
     ];
+
+
 }
