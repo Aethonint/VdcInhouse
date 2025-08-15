@@ -62,7 +62,7 @@
             <td>{{ $assignment->created_at->format('Y-m-d') }}</td>
             <td>{{ $assignment->updated_at->format('Y-m-d') }}</td>
             <td class="text-center">
-                <a href="{{ route('assign_vehicle.edit', $assignment->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('assign_vehicle.edit', $assignment->id) }}" class="btn custom-btn-success btn-sm">Edit</a>
                 <form action="{{ route('assign_vehicle.destroy', $assignment->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')

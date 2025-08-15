@@ -45,11 +45,11 @@ public function create()
         $validated = $request->validate([
             'assigned_vehicle'   => 'required|exists:vehicles,id',
             'operator'           => 'required|exists:users,id',
-            'start_date'         => 'nullable|date',
-            'start_time'         => 'nullable',
+            'start_date'         => 'required|date',
+            'start_time'         => 'required',
             'end_date'           => 'nullable|date',
             'end_time'           => 'nullable',
-            'starting_odometer'  => 'nullable|integer|min:0',
+            'starting_odometer'  => 'required|integer|min:0',
             'ending_odometer'    => 'nullable|integer|min:0',
             'optional_comment'   => 'nullable|string',
         ]);

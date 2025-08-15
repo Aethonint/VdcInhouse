@@ -90,11 +90,13 @@
                                 <div class="row">
                                     <div class="col-8">
                                         <input type="date" name="end_date" id="end_date" class="form-control" 
-                                               value="{{ \Carbon\Carbon::parse($assignment->end_datetime)->format('Y-m-d') }}">
+                                           value="{{ old('end_date', $assignment->end_datetime ? \Carbon\Carbon::parse($assignment->end_datetime)->format('Y-m-d') : '') }}"
+"
+>
                                     </div>
                                     <div class="col-4">
                                         <input type="time" name="end_time" id="end_time" class="form-control" 
-                                               value="{{ \Carbon\Carbon::parse($assignment->end_datetime)->format('H:i') }}">
+                                               value="{{ old('end_time', $assignment->end_datetime ? \Carbon\Carbon::parse($assignment->end_datetime)->format('H:i') : '') }}">
                                     </div>
                                 </div>
                             </div>
