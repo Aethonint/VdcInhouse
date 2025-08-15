@@ -73,7 +73,7 @@ public function create()
         ]);
 
         return redirect()
-            ->back()
+            ->route('assign_vehicle.index')
             ->with('success', 'Assignment added successfully.');
     }
 
