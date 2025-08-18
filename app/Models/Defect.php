@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Defect extends Model
 {
-   protected $fillable = ['user_id', 'vehicle_id','assignment_id'];
+   protected $fillable =
+   
+   
+   
+   ['user_id', 'vehicle_id','assignment_id','status'];
 
  public function details()
 {

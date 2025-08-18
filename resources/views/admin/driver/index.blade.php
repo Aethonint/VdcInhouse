@@ -47,22 +47,37 @@
                                     <td>{{ $driveruser->phone }}</td>
                                     <td>{{ $driveruser->email }}</td>
                                     <td>{{ $driveruser->driver->job_title ?? 'N/A' }}</td>
-                                    <td class="text-center  ">
-                                        <!-- Example actions -->
-                                        <a href="{{ route('driver.show', $driveruser->id) }}"
-                                            class="btn btn-info btn-sm">View</a>
-                                        <a href="{{ route('driver.edit', $driveruser->id) }}"
-                                            class="btn custom-btn-success btn-sm">Edit</a>
-                                        <form action="{{ route('driver.destroy', $driveruser->id) }}" method="POST"
-                                            style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure you want to delete this driver?')">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </td>
+                                   <td class="text-center">
+    @if(auth()->user()->role === 'admin') {{-- optional role check --}}
+    <div class="dropdown">
+        <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="actionMenu{{ $driveruser->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+            ⋮
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $driveruser->id }}">
+            <li>
+                <a class="dropdown-item" href="{{ route('driver.show', $driveruser->id) }}">
+                    <i class="bi bi-eye"></i> View
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ route('driver.edit', $driveruser->id) }}">
+                    <i class="bi bi-pencil"></i> Edit
+                </a>
+            </li>
+            <li>
+                <form action="{{ route('driver.destroy', $driveruser->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this driver?')">
+                    @csrf
+                    @method('DELETE')
+                    <button class="dropdown-item text-danger" type="submit">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    @endif
+</td>
+
                                 </tr>
                             @endforeach
                         </tbody>

@@ -33,6 +33,7 @@
                                 <th>Driver Name</th>
                                 <th>Vehicle Id</th>
                                 <th>Assingment Id</th>
+                                 <th>Status</th>
                                 <th>Created_at</th>
                          <th class="text-center">Action</th>
                             </tr>
@@ -44,6 +45,43 @@
                                      <td>{{ $defect->user->first_name }}</td>
                                         <td>{{ $defect->assignment->vehicle->vin_sn ?? 'N/A' }}</td>
                                     <td>{{ $defect->assignment->id ?? 'N/A' }}</td>
+<td>
+    @if(auth()->user()->role === 'admin')
+        <form action="{{ route('defects.updateStatus', $defect->id) }}" method="POST" class="status-form">
+            @csrf
+            @method('PATCH')
+            <select name="status" class="form-select form-select-sm status-select" data-current="{{ $defect->status }}">
+                @php
+                    $statuses = ['Created', 'In Progress', 'Clear'];
+                @endphp
+                @foreach($statuses as $status)
+                    <option value="{{ $status }}" {{ $defect->status === $status ? 'selected' : '' }}>
+                        {{ $status }}
+                    </option>
+                @endforeach
+            </select>
+        </form>
+
+        <script>
+            document.querySelectorAll('.status-select').forEach(select => {
+                select.addEventListener('change', function(e) {
+                    const newStatus = this.value;
+                    if (confirm(`Are you sure you want to change status to "${newStatus}"?`)) {
+                        this.form.submit(); // submit only if confirmed
+                    } else {
+                        // Reset to previous value if cancelled
+                        this.value = this.getAttribute('data-current');
+                    }
+                });
+            });
+        </script>
+    @else
+        {{ $defect->status }}
+    @endif
+</td>
+
+
+
                                          <td>{{ $defect->created_at ?? 'N/A' }}</td>
                                    
                                     <td class="text-center  ">

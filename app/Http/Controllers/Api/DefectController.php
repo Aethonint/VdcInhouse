@@ -219,6 +219,7 @@ public function storeDefects(Request $request)
         $defect = Defect::create([
             'assignment_id' => $request->assignment_id,
             'user_id' => auth()->id(),
+               'status' => "Created",
         ]);
 
         $images = $request->file('images') ?? [];
@@ -283,7 +284,7 @@ public function destroy($id)
             $detail->delete();
         }
 
-        // Delete defect record
+       //Delte previous records if matches any 
         $defect->delete();
 
         DB::commit();
@@ -294,6 +295,25 @@ public function destroy($id)
         return redirect()->back()->with('error', 'Delete failed: '.$e->getMessage());
     }
 }
+
+
+
+public function updateStatus(Request $request, $id)
+{
+    $request->validate([
+        'status' => 'required|string|in:Created,In Progress,Clear',
+    ]);
+
+    $defect = Defect::findOrFail($id);
+
+    //Only Admin can  update this status 
+    
+
+    $defect->update(['status' => $request->status]);
+
+    return redirect()->back()->with('success', 'Status updated successfully');
+}
+
 
 
 }

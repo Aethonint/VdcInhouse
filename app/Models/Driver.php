@@ -8,6 +8,7 @@ class Driver extends Model
 {
    protected $fillable = [
         'user_id',
+        
         'job_title',
         'dob',
         'start_date',

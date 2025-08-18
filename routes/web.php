@@ -99,6 +99,8 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
             Route::get('/defects', [DefectController::class, 'index'])->name('defect.index');
             Route::get('admin/defects/{id}', [DefectController::class, 'show'])->name('defects.show');
             Route::delete('/admin/defects/{id}', [DefectController::class, 'destroy'])->name('defects.destroy');
+            Route::patch('/defects/{id}/status', [DefectController::class, 'updateStatus'])->name('defects.updateStatus');
+
 
 
 
