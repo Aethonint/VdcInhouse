@@ -93,7 +93,7 @@
                 <div class="menu-title">Defects</div>
               </a>
               <ul>
-                <li> <a href="icons-line-icons.html"><i class="bi bi-arrow-right-short"></i>Active Defects</a>
+                <li> <a href="{{route('defect.index')}}"><i class="bi bi-arrow-right-short"></i>Active Defects</a>
                 </li>
                 <li> <a href="icons-boxicons.html"><i class="bi bi-arrow-right-short"></i>Resolved Defects</a>
                 </li>

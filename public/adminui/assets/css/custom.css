@@ -200,3 +200,42 @@ border-bottom: 1px solid #00467A;
     background-color: transparent;
     border-color: #dddddd;
 }
+.preview-image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+    transform: scale(1.2);
+}
+
+/* Large preview container */
+#imagePreviewModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#imagePreviewModal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+
+.metismenu ul {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease; /* smooth expand/collapse */
+}
+
+.metismenu .mm-show {
+    height: auto;
+}

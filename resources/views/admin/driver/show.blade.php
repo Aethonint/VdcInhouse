@@ -85,7 +85,9 @@
                         </div>
 
                     </div><!-- End Box -->
-
+  <div class="mt-3">
+                        <a href="{{ route('driver.index') }}" class="btn btn-primary">Back to Drivers</a>
+                    </div>
                 </div>
             </div>
         </div>

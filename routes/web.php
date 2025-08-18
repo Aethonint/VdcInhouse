@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\VehicleController;
-
-
+use App\Http\Controllers\Api\DefectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +95,14 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
           Route::PUT('/assign/vehicle/update/{id}', [AssignVehicleController::class, 'update'])->name('assign_vehicle.update');
            Route::DELETE('/assign/vehicle/destroy/{id}', [AssignVehicleController::class, 'destroy'])->name('assign_vehicle.destroy');
            // End assign vehicles
+           // START DEFECT ROUTES
+            Route::get('/defects', [DefectController::class, 'index'])->name('defect.index');
+            Route::get('admin/defects/{id}', [DefectController::class, 'show'])->name('defects.show');
+            Route::delete('/admin/defects/{id}', [DefectController::class, 'destroy'])->name('defects.destroy');
+
+
+
+            // END DEFECT ROUTES
       
       
 

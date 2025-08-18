@@ -17,5 +17,9 @@ public function assignment()
 {
     return $this->belongsTo(Assign::class, 'assignment_id');
 }
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
 
 }

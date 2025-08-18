@@ -36,7 +36,7 @@
         <th>End Date/Time</th>
         <th>Starting Odometer</th>
         <th>Ending Odometer</th>
-        <th>Comment</th>
+      
         <th>Created At</th>
         <th>Updated At</th>
         <th class="text-center">Action</th>
@@ -58,10 +58,11 @@
             </td>
             <td>{{ $assignment->starting_odometer ?? '-' }}</td>
             <td>{{ $assignment->ending_odometer ?? '-' }}</td>
-            <td>{{ $assignment->comment ?? '-' }}</td>
+          
             <td>{{ $assignment->created_at->format('Y-m-d') }}</td>
             <td>{{ $assignment->updated_at->format('Y-m-d') }}</td>
             <td class="text-center">
+                  <a href="{{ route('assign_vehicle.show', $assignment->id) }}" class="btn btn-info btn-sm">View</a>
                 <a href="{{ route('assign_vehicle.edit', $assignment->id) }}" class="btn custom-btn-success btn-sm">Edit</a>
                 <form action="{{ route('assign_vehicle.destroy', $assignment->id) }}" method="POST" class="d-inline">
                     @csrf

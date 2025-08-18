@@ -115,3 +115,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 </script>
+
+
+<script>
+document.querySelectorAll('.preview-image').forEach(img => {
+    img.addEventListener('click', function() {
+        document.getElementById('previewImg').src = this.src;
+        document.getElementById('imagePreviewModal').style.display = 'flex';
+    });
+});
+
+document.getElementById('imagePreviewModal').addEventListener('click', function() {
+    this.style.display = 'none';
+});
+</script>
+
+
+
+

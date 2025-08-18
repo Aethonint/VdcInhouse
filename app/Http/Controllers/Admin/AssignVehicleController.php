@@ -80,7 +80,12 @@ public function create()
     public function show( $id)
     {
          
-        return view('vehicle.show',);
+        // Fetch the assignment with related vehicle and operator
+    $assignment = Assign::with(['vehicle', 'operator'])
+        ->findOrFail($id);
+
+    // Pass data to the view
+    return view('admin.assignvehicle.show', compact('assignment'));
     }
 
     public function edit( $id)
