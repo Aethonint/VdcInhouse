@@ -3,13 +3,13 @@
     <main class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb  d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Tables</div>
+            <div class="breadcrumb-title pe-3">Defect</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                        <li class="breadcrumb-item active" aria-current="page">Defect Table</li>
                     </ol>
                 </nav>
             </div>
@@ -33,6 +33,7 @@
                                 <th>Driver Name</th>
                                 <th>Vehicle Id</th>
                                 <th>Assingment Id</th>
+                                   <th>Total Defects</th>
                                  <th>Status</th>
                                 <th>Created_at</th>
                          <th class="text-center">Action</th>
@@ -45,6 +46,7 @@
                                      <td>{{ $defect->user->first_name }}</td>
                                         <td>{{ $defect->assignment->vehicle->vin_sn ?? 'N/A' }}</td>
                                     <td>{{ $defect->assignment->id ?? 'N/A' }}</td>
+                                     <td>{{ $defect->total_defects ?? 'N/A' }}</td>
 <td>
     @if(auth()->user()->role === 'admin')
         <form action="{{ route('defects.updateStatus', $defect->id) }}" method="POST" class="status-form">

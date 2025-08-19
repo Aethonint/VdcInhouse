@@ -15,8 +15,8 @@ Route::post('/driver/login', [AuthController::class, 'driverLogin']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/driver/logout', [AuthController::class, 'logout']);
-   Route::get('/driver/assignment', [AssignController::class, 'getDriverAssignment']);
-  Route::post('/store/defects', [DefectController::class, 'storeDefects']);
+    Route::get('/driver/assignment', [AssignController::class, 'getDriverAssignment']);
+    Route::post('/store/defects', [DefectController::class, 'storeDefects']);
 
     // Example protected route:
     Route::get('/driver/me', function (\Illuminate\Http\Request $request) {

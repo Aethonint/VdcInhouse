@@ -10,7 +10,7 @@ class Defect extends Model
    
    
    
-   ['user_id', 'vehicle_id','assignment_id','status'];
+   ['user_id', 'vehicle_id','assignment_id','status','total_defects'];
 
  public function details()
 {

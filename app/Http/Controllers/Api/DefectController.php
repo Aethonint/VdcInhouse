@@ -216,10 +216,17 @@ public function storeDefects(Request $request)
 
     DB::beginTransaction();
     try {
+           $defectives = $request->input('defectives', []);
+           // Count how many defects are "yes" (1)
+        $totalDefects = collect($defectives)->filter(function($val) {
+            return $val == 'yes'; // or 'yes' if your array uses string
+        })->count();
+
         $defect = Defect::create([
             'assignment_id' => $request->assignment_id,
             'user_id' => auth()->id(),
                'status' => "Created",
+                'total_defects' => $totalDefects, // <-- store total count here
         ]);
 
         $images = $request->file('images') ?? [];

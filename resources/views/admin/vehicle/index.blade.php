@@ -3,12 +3,12 @@
     <main class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb  d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Vehicles</div>
+            <div class="breadcrumb-title pe-3">Vehicle</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item">
-                            <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                            <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Vehicle Table</li>
                     </ol>
@@ -68,18 +68,38 @@
                                     <td>{{ $vehicle->note }}</td>
                                     <td>{{ $vehicle->created_at }}</td>
                                     <td>{{ $vehicle->updated_at }}</td>
-                                    <td class="text-center">
-                                        {{-- <a href="{{ route('vehicle.show', $vehicle->id) }}" class="btn btn-info btn-sm">View</a> --}}
-                                        <a href="{{ route('vehicle.edit', $vehicle->id) }}" class="btn custom-btn-success btn-sm">Edit</a>
-                                        <form action="{{ route('vehicle.destroy', $vehicle->id) }}" method="POST" style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure you want to delete this vehicle?')">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </td>
+                                  <td class="text-center">
+    @if(auth()->user()->role === 'admin') {{-- Optional role check --}}
+    <div class="dropdown">
+        <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="actionMenu{{ $vehicle->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+            ⋮
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $vehicle->id }}">
+          
+          <li>
+                <a class="dropdown-item" href="{{ route('vehicle.show', $vehicle->id) }}">
+                    <i class="bi bi-eye"></i> View
+                </a>
+            </li> 
+            <li>
+                <a class="dropdown-item" href="{{ route('vehicle.edit', $vehicle->id) }}">
+                    <i class="bi bi-pencil"></i> Edit
+                </a>
+            </li>
+            <li>
+                <form action="{{ route('vehicle.destroy', $vehicle->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this vehicle?')" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button class="dropdown-item text-danger" type="submit">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    @endif
+</td>
+
                                 </tr>
                             @endforeach
                         </tbody>

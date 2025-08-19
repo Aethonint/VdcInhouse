@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('defect_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('defect_id');
-   
-$table->string('is_defect')->nullable();
 
-    $table->text('note')->nullable();
-    $table->string('image_path')->nullable();
+            $table->string('is_defect')->nullable();
+
+            $table->text('note')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

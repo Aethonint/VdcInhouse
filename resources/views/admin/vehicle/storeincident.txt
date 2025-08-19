@@ -1,0 +1,66 @@
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Incident;
+use App\Models\IncidentDetail;
+use Illuminate\Support\Facades\DB;
+
+class IncidentController extends Controller
+{
+    public function store(Request $request)
+    {
+        // ✅ Validate main data
+        $request->validate([
+            'driver_id' => 'required|integer',
+            'assignment_id' => 'required|integer',
+            'vehicle_number' => 'required|string',
+            'incident_date' => 'required|date',
+            'details' => 'required|array',
+            'details.*.field_name' => 'required|string',
+            'details.*.notes' => 'nullable|string',
+            'details.*.image' => 'nullable|file|image|max:2048'
+        ]);
+
+        DB::beginTransaction();
+        try {
+            // ✅ Store main incident
+            $incident = Incident::create([
+                'driver_id' => $request->driver_id,
+                'assignment_id' => $request->assignment_id,
+                'vehicle_number' => $request->vehicle_number,
+                'incident_date' => $request->incident_date,
+                'status' => 'pending'
+            ]);
+
+            // ✅ Store details
+            foreach ($request->details as $index => $detail) {
+                $imagePath = null;
+
+                if (isset($detail['image']) && $detail['image'] instanceof \Illuminate\Http\UploadedFile) {
+                    $imagePath = $detail['image']->store('incident_images', 'public');
+                }
+
+                IncidentDetail::create([
+                    'incident_id' => $incident->id,
+                    'field_name' => $detail['field_name'],
+                    'notes' => $detail['notes'] ?? null,
+                    'image_path' => $imagePath
+                ]);
+            }
+
+            DB::commit();
+
+            return response()->json([
+                'message' => 'Incident report saved successfully',
+                'incident_id' => $incident->id
+            ], 201);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+}

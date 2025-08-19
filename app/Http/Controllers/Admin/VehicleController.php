@@ -57,7 +57,7 @@ class VehicleController extends Controller
     public function show( $id)
     {
          $vehicle=Vehicle::find($id);
-        return view('vehicle.show', compact('vehicle'));
+        return view('admin.vehicle.show', compact('vehicle'));
     }
 
     public function edit( $id)
