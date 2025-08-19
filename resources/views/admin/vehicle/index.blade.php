@@ -36,7 +36,7 @@
                                 <th>Status</th>
                                 <th>Ownership</th>
                                 <th>Pictures</th>
-                                <th>Note</th>
+                             
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th class="text-center">Action</th>
@@ -65,7 +65,7 @@
                                             N/A
                                         @endif
                                     </td>
-                                    <td>{{ $vehicle->note }}</td>
+                                   
                                     <td>{{ $vehicle->created_at }}</td>
                                     <td>{{ $vehicle->updated_at }}</td>
                                   <td class="text-center">

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\VehicleController;
 use App\Http\Controllers\Api\DefectController;
+use App\Http\Controllers\Api\IncidentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,11 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::delete('/admin/defects/{id}', [DefectController::class, 'destroy'])->name('defects.destroy');
     Route::patch('/defects/{id}/status', [DefectController::class, 'updateStatus'])->name('defects.updateStatus');
     // END DEFECT ROUTES
+        // Start incident ROUTES
+         Route::get('/incidents', [IncidentController::class, 'index'])->name('incident.index');
+           Route::get('/incidents/show/{id}', [IncidentController::class, 'show'])->name('incident.show');
+             Route::delete('/incidents/destroy/{id}', [IncidentController::class, 'destroy'])->name('incident.destroy');
+        // End incident ROUTES
 
 
 

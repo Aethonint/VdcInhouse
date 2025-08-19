@@ -127,7 +127,7 @@
                 <div class="menu-title">Incidents</div>
               </a>
               <ul>
-                <li> <a href="#"><i class="bi bi-arrow-right-short"></i>All Reports</a>
+                <li> <a href="{{route('incident.index')}}"><i class="bi bi-arrow-right-short"></i>All Reports</a>
                 </li>
                 <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Escalated</a>
                 </li>

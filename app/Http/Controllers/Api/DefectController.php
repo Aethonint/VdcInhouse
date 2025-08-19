@@ -85,7 +85,7 @@ public function show($id)
 //     ]);
 
 // $assignment = Assign::where('id', $request->assignment_id)
-//     ->where('operator_id', auth()->id()) // ✅ Correct column check if assingme_id related to specifc users or not
+//     ->where('operator_id', auth()->id()) 
 //     ->first();
 
 // if (!$assignment) {
@@ -135,7 +135,7 @@ public function show($id)
 //         'details' => 'required',
 //     ]);
 
-//     // ✅ Validate assignment ownership
+//   
 //     $assignment = Assign::where('id', $request->assignment_id)
 //         ->where('operator_id', auth()->id())
 //         ->first();
@@ -147,7 +147,7 @@ public function show($id)
 //         ], 404);
 //     }
 
-//     // ✅ Decode details
+//    
 //     $details = json_decode($request->details, true);
 //     if (!is_array($details)) {
 //         return response()->json([
@@ -226,7 +226,7 @@ public function storeDefects(Request $request)
             'assignment_id' => $request->assignment_id,
             'user_id' => auth()->id(),
                'status' => "Created",
-                'total_defects' => $totalDefects, // <-- store total count here
+                'total_defects' => $totalDefects, 
         ]);
 
         $images = $request->file('images') ?? [];
