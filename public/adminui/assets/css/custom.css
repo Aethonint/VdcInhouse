@@ -239,3 +239,48 @@ border-bottom: 1px solid #00467A;
 .metismenu .mm-show {
     height: auto;
 }
+
+
+
+
+
+
+/* .mini-logo {
+    display: none;
+  
+}
+
+
+.sidebar-wrapper.collapsed .mini-logo {
+    display: block;
+} */
+
+
+/* Default: show full logo, hide mini logo */
+.logo-text {
+    display: block;
+}
+.mini-logo {
+    display: none;
+}
+
+/* When sidebar is collapsed, show mini logo and hide full logo */
+.sidebar-wrapper.collapsed .mini-logo {
+    display: block;
+}
+.sidebar-wrapper.collapsed .logo-text {
+    display: none;
+}
+
+/* Optional: if sidebar expands on hover, remove mini logo */
+.sidebar-wrapper:hover .mini-logo {
+    display: none;
+}
+.sidebar-wrapper:hover .logo-text {
+    display: block;
+}
+
+.toggle-icon-white {
+    color: white !important;
+}
+

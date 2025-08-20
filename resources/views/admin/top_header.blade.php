@@ -162,7 +162,8 @@
               <li class="nav-item dropdown dropdown-large">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                   <div class="user-setting d-flex align-items-center gap-1">
-                    <img src="{{asset('adminui/assets/images/avatars/avatar-1.png')}}" class="user-img" alt="">
+                <i class="bi bi-gear fs-5 p-3"></i> <!-- fs-4 sets size -->
+    
                     <div class="user-name d-none d-sm-block">Admin</div>
                   </div>
                 </a>
@@ -170,7 +171,7 @@
                   <li>
                      <a class="dropdown-item" href="#">
                        <div class="d-flex align-items-center">
-                          <img src="{{asset('adminui/assets/images/avatars/avatar-1.png')}}" alt="" class="rounded-circle" width="60" height="60">
+                         <i class="bi bi-gear fs-5 p-2"></i> <!-- fs-4 sets size -->
                           <div class="ms-3">
                             <h6 class="mb-0 dropdown-user-name">Admin</h6>
                            

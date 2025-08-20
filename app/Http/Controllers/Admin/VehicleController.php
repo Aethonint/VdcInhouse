@@ -28,7 +28,7 @@ class VehicleController extends Controller
             'status'       => 'required|string',
             'ownership'    => 'required|string',
             'pictures.*'   => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'pictures' => 'required|array|max:4',  
+            'pictures' => 'required|array|max:3',  
             'note'         => 'nullable|string',
         ]);
 
@@ -77,7 +77,7 @@ class VehicleController extends Controller
         'status'       => 'required|string',
         'ownership'    => 'required|string',
         'pictures.*'   => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-        'pictures'     => 'nullable|array|max:4',
+        'pictures'     => 'nullable|array|max:3',
         'remove_pictures' => 'nullable|array',
         'remove_pictures.*' => 'string',
         'note'         => 'nullable|string',

@@ -132,4 +132,16 @@ document.getElementById('imagePreviewModal').addEventListener('click', function(
 
 
 
+<script>
+    const toggleBtn = document.querySelector('.toggle-icon');
+const sidebar = document.querySelector('.sidebar-wrapper');
+
+toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+});
+
+</script>
+
+
+
 

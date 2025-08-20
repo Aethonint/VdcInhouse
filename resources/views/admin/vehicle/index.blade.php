@@ -37,8 +37,7 @@
                                 <th>Ownership</th>
                                 <th>Pictures</th>
                              
-                                <th>Created At</th>
-                                <th>Updated At</th>
+                              
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -66,8 +65,7 @@
                                         @endif
                                     </td>
                                    
-                                    <td>{{ $vehicle->created_at }}</td>
-                                    <td>{{ $vehicle->updated_at }}</td>
+                                 
                                   <td class="text-center">
     @if(auth()->user()->role === 'admin') {{-- Optional role check --}}
     <div class="dropdown">

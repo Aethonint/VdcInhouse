@@ -1,7 +1,8 @@
    <aside class="sidebar-wrapper" data-simplebar="true">
-          <div class="sidebar-header">
-            <div class="">
-             <!-- <h4>Fleet</h4> -->
+          <div class="sidebar-header ">
+            <div class=" mini-logo">
+       <h4> <img height="50" width="50" src="{{ asset('adminui/assets/images/avatars/minifleet.jpeg') }}" </h4> 
+            
             </div>
             <div>
     <h4 class="logo-text">
@@ -13,7 +14,7 @@
     </h4>
 </div>
 
-            <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
+            <div class="toggle-icon ms-auto text-white"><i class="bi bi-chevron-double-left"></i>
             </div>
           </div>
           <!--navigation-->

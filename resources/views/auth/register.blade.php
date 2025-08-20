@@ -115,6 +115,14 @@
                                             </div>
                                             <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
                                         </div>
+                                         {{-- <div class="col-12  ">
+                                            <label for="role" class="form-label">Role</label>
+                                            <div class="ms-auto position-relative">
+                                                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-person-circle"></i></div>
+                                                <input id="role" type="text" name="role" value="admin" required autofocus autocomplete="given-name" class="form-control radius-30 ps-5" placeholder="Enter First Name">
+                                            </div>
+                                            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+                                        </div> --}}
 
                                         <div class="col-12 mt-4">
                                             <label for="last_name" class="form-label">Last Name</label>
