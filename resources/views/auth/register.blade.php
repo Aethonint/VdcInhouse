@@ -76,7 +76,7 @@
   <!-- loader-->
 	<link href="{{asset('adminui/assets/css/pace.min.css')}}" rel="stylesheet" />
   <link href="{{asset('adminui/assets/css/custom.css')}}" rel="stylesheet" />
-  <title>Skodash - Bootstrap 5 Admin Template</title>
+  <title>FleetEdge</title>
 </head>
 
 <body>
@@ -89,7 +89,7 @@
     <main class="authentication-content">
         <div class="container-fluid sign-in-card">
             <div class="authentication-card">
-                <div class="card shadow rounded-0 overflow-hidden">
+                <div class="card shadow rounded border   overflow-hidden">
                     <div class="row g-0">
                         <div class="sign-in-card col-lg-6 bg-login d-flex align-items-center justify-content-center">
                             <img src="{{ asset('adminui/assets/images/avatars/fleetlogo.png') }}" class="img-fluid" alt="">

@@ -1,7 +1,7 @@
    <aside class="sidebar-wrapper" data-simplebar="true">
           <div class="sidebar-header ">
             <div class=" mini-logo">
-       <h4> <img height="50" width="50" src="{{ asset('adminui/assets/images/avatars/minifleet.jpeg') }}" </h4> 
+       <h4> <img height="50" width="40" src="{{ asset('adminui/assets/images/avatars/minifleet.png') }}" </h4> 
             
             </div>
             <div>
