@@ -346,46 +346,64 @@ public function edit($id)
     $defect = Defect::with('details')->findOrFail($id);
     return view('admin.defect.edit', compact('defect'));
 }
+// Update funtiocn corresponding ot  add new details 
 public function update(Request $request, $id)
 {
     $request->validate([
-        'detail_ids' => 'required|array',
-        'defectives' => 'required|array',
-        'notes' => 'nullable|array',
-        'images' => 'nullable|array',
-        'images.*' => 'nullable|file|mimes:jpg,jpeg,png|max:2048'
+        'detail_ids'    => 'nullable|array',
+        'defectives'    => 'required|array',
+        'notes'         => 'nullable|array',
+        'images'        => 'nullable|array',
+        'images.*'      => 'nullable|file|mimes:jpg,jpeg,png|max:2048'
     ]);
 
-    $detailIds = $request->detail_ids;
+    $detailIds  = $request->detail_ids ?? [];
     $defectives = $request->defectives;
-    $notes = $request->notes;
-    $images = $request->file('images') ?? [];
+    $notes      = $request->notes ?? [];
+    $images     = $request->file('images') ?? [];
 
-    foreach ($detailIds as $index => $detailId) {
-        $detail = \App\Models\DefectDetail::find($detailId);
+    foreach ($defectives as $index => $isDefect) {
+        $note = $notes[$index] ?? '';
+        $image = $images[$index] ?? null;
 
-        if (!$detail) {
-            continue;
-        }
+        // Check if this is an existing detail or a new one
+        if (isset($detailIds[$index])) {
+            $detail = \App\Models\DefectDetail::find($detailIds[$index]);
 
-        $data = [
-            'is_defect' => $defectives[$index] ?? null,
-            'note' => $notes[$index] ?? '',
-        ];
-
-        if (isset($images[$index])) {
-            // Delete old image if exists
-            if ($detail->image_path) {
-                \Storage::disk('public')->delete($detail->image_path);
+            if (!$detail) {
+                continue;
             }
-            // Upload new image
-            $data['image_path'] = $images[$index]->store('defects', 'public');
-        }
 
-        $detail->update($data);
+            $data = [
+                'is_defect' => $isDefect,
+                'note'      => $note,
+            ];
+
+            if ($image) {
+                if ($detail->image_path) {
+                    \Storage::disk('public')->delete($detail->image_path);
+                }
+                $data['image_path'] = $image->store('defects', 'public');
+            }
+
+            $detail->update($data);
+        } else {
+            // Create new defect detail
+            $data = [
+                'defect_id' => $id,
+                'is_defect' => $isDefect,
+                'note'      => $note,
+            ];
+
+            if ($image) {
+                $data['image_path'] = $image->store('defects', 'public');
+            }
+
+            \App\Models\DefectDetail::create($data);
+        }
     }
 
-    return redirect()->route('defect.index', $id)->with('success', 'Defect details updated successfully!');
+    return redirect()->route('defect.index')->with('success', 'Defect details updated successfully!');
 }
 
 

@@ -60,6 +60,11 @@
                                                 <i class="bi bi-eye"></i> View
                                             </a>
                                         </li>
+                                          <li>
+                                            <a class="dropdown-item" href="{{ route('incident.edit', $incident->id) }}">
+                                                <i class="bi bi-eye"></i> Edit
+                                            </a>
+                                        </li>
                                       
                                         <li>
                                             <form action="{{ route('incident.destroy', $incident->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this incident?')" style="display:inline;">

@@ -108,6 +108,8 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
         // Start incident ROUTES
          Route::get('/incidents', [IncidentController::class, 'index'])->name('incident.index');
            Route::get('/incidents/show/{id}', [IncidentController::class, 'show'])->name('incident.show');
+              Route::get('/incidents/{id}/edit', [IncidentController::class, 'edit'])->name('incident.edit'); // Show edit form
+    Route::Put('/incidents/{id}', [IncidentController::class, 'update'])->name('incident.update'); // Update data
              Route::delete('/incidents/destroy/{id}', [IncidentController::class, 'destroy'])->name('incident.destroy');
         // End incident ROUTES
 

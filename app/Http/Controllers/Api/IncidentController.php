@@ -187,5 +187,80 @@ public function getUserIncidents()
 }
 
 
+
+
+
+public function edit($id)
+{
+    // Load the main incident with details
+    $incident = Incident::with('details')->findOrFail($id);
+    return view('admin.incident.edit', compact('incident'));
+}
+
+public function update(Request $request, $id)
+{
+    $incident = Incident::with('details')->findOrFail($id);
+
+    $request->validate([ 
+  
+        'details' => 'required|array',
+        'details.*.id' => 'nullable|exists:incident_details,id',
+        'details.*.field_name' => 'required|string',
+        'details.*.notes' => 'nullable|string',
+        'details.*.image' => 'nullable|file|image|max:2048'
+    ]);
+
+    DB::beginTransaction();
+    try {
+        // ✅ Update incident
+       
+
+        // ✅ Update each detail
+        foreach ($request->details as $detailData) {
+            if (isset($detailData['id'])) {
+                // Update existing detail
+                $detail = IncidentDetail::find($detailData['id']);
+
+                $imagePath = $detail->image_path;
+                if (isset($detailData['image']) && $detailData['image'] instanceof \Illuminate\Http\UploadedFile) {
+                    // Delete old image
+                    if ($imagePath && \Storage::exists('public/' . $imagePath)) {
+                        \Storage::delete('public/' . $imagePath);
+                    }
+                    $imagePath = $detailData['image']->store('incident_images', 'public');
+                }
+
+                $detail->update([
+                    'field_name' => $detailData['field_name'],
+                    'notes' => $detailData['notes'] ?? null,
+                    'image_path' => $imagePath
+                ]);
+            } else {
+                // Create new detail if added in form
+                $imagePath = null;
+                if (isset($detailData['image']) && $detailData['image'] instanceof \Illuminate\Http\UploadedFile) {
+                    $imagePath = $detailData['image']->store('incident_images', 'public');
+                }
+
+                IncidentDetail::create([
+                    'incident_id' => $incident->id,
+                    'field_name' => $detailData['field_name'],
+                    'notes' => $detailData['notes'] ?? null,
+                    'image_path' => $imagePath
+                ]);
+            }
+        }
+
+        DB::commit();
+
+        return redirect()->route('incident.index')->with('success', 'Incident updated successfully.');
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return redirect()->back()->with('error', 'Update failed: ' . $e->getMessage());
+    }
+}
+
+
+
     
 }

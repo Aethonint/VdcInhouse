@@ -86,23 +86,35 @@
 
                                          <td>{{ $defect->created_at ?? 'N/A' }}</td>
                                    
-                                    <td class="text-center  ">
-                                        <!-- Example actions -->
-                                        <a href="{{ route('defects.show', $defect->id) }}"
-                                            class="btn btn-info btn-sm">View</a>
-                                                <a href="{{ route('defects.edit', $defect->id) }}"
-                                            class="btn btn-info btn-sm">Edit</a>
-                                        
-                                        <form action="{{ route('defects.destroy', $defect->id) }}" method="POST"
-                                            style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure you want to delete this driver?')">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </td>
+                                 <td class="text-center">
+    <div class="dropdown">
+        <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="actionMenu{{ $defect->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+            ⋮
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $defect->id }}">
+            <li>
+                <a class="dropdown-item" href="{{ route('defects.show', $defect->id) }}">
+                    <i class="bi bi-eye"></i> View
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ route('defects.edit', $defect->id) }}">
+                    <i class="bi bi-pencil"></i> Edit
+                </a>
+            </li>
+            <li>
+                <form action="{{ route('defects.destroy', $defect->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this defect?')" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button class="dropdown-item text-danger" type="submit">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</td>
+
                                 </tr>
                             @endforeach
                         </tbody>
