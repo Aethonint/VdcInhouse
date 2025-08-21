@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Defect;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\DB;
@@ -320,6 +321,73 @@ public function updateStatus(Request $request, $id)
 
     return redirect()->back()->with('success', 'Status updated successfully');
 }
+
+
+public function getUserDefects()
+{
+    $userId = Auth::id(); // Get the logged-in user's ID
+
+    $defects = Defect::where('user_id', $userId)
+       
+        ->get();
+
+    return response()->json([
+        'status' => 'success',
+        'count'  => $defects->count(),
+        'data'   => $defects
+    ]);
+}
+
+
+
+
+public function edit($id)
+{
+    $defect = Defect::with('details')->findOrFail($id);
+    return view('admin.defect.edit', compact('defect'));
+}
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'detail_ids' => 'required|array',
+        'defectives' => 'required|array',
+        'notes' => 'nullable|array',
+        'images' => 'nullable|array',
+        'images.*' => 'nullable|file|mimes:jpg,jpeg,png|max:2048'
+    ]);
+
+    $detailIds = $request->detail_ids;
+    $defectives = $request->defectives;
+    $notes = $request->notes;
+    $images = $request->file('images') ?? [];
+
+    foreach ($detailIds as $index => $detailId) {
+        $detail = \App\Models\DefectDetail::find($detailId);
+
+        if (!$detail) {
+            continue;
+        }
+
+        $data = [
+            'is_defect' => $defectives[$index] ?? null,
+            'note' => $notes[$index] ?? '',
+        ];
+
+        if (isset($images[$index])) {
+            // Delete old image if exists
+            if ($detail->image_path) {
+                \Storage::disk('public')->delete($detail->image_path);
+            }
+            // Upload new image
+            $data['image_path'] = $images[$index]->store('defects', 'public');
+        }
+
+        $detail->update($data);
+    }
+
+    return redirect()->route('defect.index', $id)->with('success', 'Defect details updated successfully!');
+}
+
 
 
 

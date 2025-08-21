@@ -7,6 +7,8 @@ use App\Models\Assign;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Defect;
 
 class IncidentController extends Controller
 {
@@ -167,6 +169,21 @@ public function destroy($id)
     $incident->delete();
 
     return redirect()->route('incident.index')->with('success', 'Incident deleted successfully.');
+}
+
+public function getUserIncidents()
+{
+    $userId = Auth::id(); // Get the logged-in user's ID
+
+    $incident = Incident::where('driver_id', $userId)
+       
+        ->get();
+
+    return response()->json([
+        'status' => 'success',
+        'count'  => $incident->count(),
+        'data'   => $incident
+    ]);
 }
 
 

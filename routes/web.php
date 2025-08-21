@@ -100,6 +100,8 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     // START DEFECT ROUTES
     Route::get('/defects', [DefectController::class, 'index'])->name('defect.index');
     Route::get('admin/defects/{id}', [DefectController::class, 'show'])->name('defects.show');
+   Route::get('/defects/{id}/edit', [DefectController::class, 'edit'])->name('defects.edit'); // Show edit form
+    Route::patch('/defects/{id}', [DefectController::class, 'update'])->name('defects.update'); // Update data
     Route::delete('/admin/defects/{id}', [DefectController::class, 'destroy'])->name('defects.destroy');
     Route::patch('/defects/{id}/status', [DefectController::class, 'updateStatus'])->name('defects.updateStatus');
     // END DEFECT ROUTES
