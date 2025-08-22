@@ -64,6 +64,7 @@
                     <i class="bi bi-pencil"></i> Edit
                 </a>
             </li>
+           
             <li>
                 <form action="{{ route('driver.destroy', $driveruser->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this driver?')">
                     @csrf

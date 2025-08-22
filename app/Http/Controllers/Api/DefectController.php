@@ -354,8 +354,15 @@ public function update(Request $request, $id)
         'defectives'    => 'required|array',
         'notes'         => 'nullable|array',
         'images'        => 'nullable|array',
-        'images.*'      => 'nullable|file|mimes:jpg,jpeg,png|max:2048'
+        'images.*'      => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+          'total_defects' => 'required|integer|min:0',
+
     ]);
+
+       $defect = Defect::findOrFail($id);
+    $defect->total_defects = $request->total_defects;
+    $defect->save();
+
 
     $detailIds  = $request->detail_ids ?? [];
     $defectives = $request->defectives;

@@ -63,6 +63,7 @@
                 @endforeach
             </select>
         </form>
+        // defects index page script done 
 
         <script>
             document.querySelectorAll('.status-select').forEach(select => {

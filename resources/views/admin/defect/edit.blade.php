@@ -37,6 +37,11 @@
                                 <input type="text" class="form-control" value="{{ $defect->id }}" readonly>
                             </div>
                         </div>
+                        <div class="mb-3 col-md-6">
+       <label for="total_defects">Total Defects</label>
+      <input type="number" name="total_defects" id="total_defects" class="form-control" 
+             value="{{ $defect->total_defects }}" min="0">
+       </div>
 
                         <h5 class="card-subtitle mb-2">Defect Details</h5>
 
