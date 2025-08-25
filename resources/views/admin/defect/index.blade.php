@@ -3,13 +3,13 @@
     <main class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb  d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Defect</div>
+            <div class="breadcrumb-title pe-3">Defects</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="bi bi-gear-wide-connected"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Defect Table</li>
+                        <li class="breadcrumb-item active" aria-current="page">Active Defects</li>
                     </ol>
                 </nav>
             </div>
@@ -29,14 +29,14 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th >ID</th>
+                                <th >Record #</th>
                                 <th>Driver Name</th>
                                 <th>Vehicle Id</th>
-                                <th>Assingment Id</th>
+                                {{-- <th>Assingment Id</th> --}}
                                    <th>Total Defects</th>
                                  <th>Status</th>
                                 <th>Created_at</th>
-                         <th class="text-center">Action</th>
+                         <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +45,7 @@
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                      <td>{{ $defect->user->first_name }}</td>
                                         <td>{{ $defect->assignment->vehicle->vin_sn ?? 'N/A' }}</td>
-                                    <td>{{ $defect->assignment->id ?? 'N/A' }}</td>
+                                    {{-- <td>{{ $defect->assignment->id ?? 'N/A' }}</td> --}}
                                      <td>{{ $defect->total_defects ?? 'N/A' }}</td>
 <td>
     @if(auth()->user()->role === 'admin')
@@ -63,7 +63,7 @@
                 @endforeach
             </select>
         </form>
-        // defects index page script done 
+       
 
         <script>
             document.querySelectorAll('.status-select').forEach(select => {

@@ -29,13 +29,13 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th >ID</th>
+                                <th >Record #</th>
                                 <th>Employee No</th>
                                 <th>First Name</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Job Title</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -8,7 +8,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('admin.dashboard') }}"><i class="bx bx-home-alt"></i></a>
+                        <a href="{{ route('admin.dashboard') }}"><i class="bi bi-exclamation-triangle"></i></a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">Incident Table</li>
                 </ol>
@@ -32,11 +32,11 @@
                             <th class="text-center">#</th>
                             <th>Vehicle Number</th>
                             <th>Driver ID</th>
-                            <th>Assignment ID</th>
+                            {{-- <th>Assignment ID</th> --}}
                             <th>Date</th>
                             {{-- <th>Status</th> --}}
                            
-                            <th class="text-center">Action</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +45,7 @@
                             <td  class="text-center">{{ $loop->iteration }}</td>
                           <td>{{ $incident->assignment->vehicle->vin_sn ?? 'N/A' }}</td>
                           <td>{{ $incident->user->first_name ?? 'N/A' }}</td>
-                            <td>{{ $incident->assignment_id }}</td>
+                            {{-- <td>{{ $incident->assignment_id }}</td> --}}
                             <td>{{ \Carbon\Carbon::parse($incident->incident_date)->format('d M Y') }}</td>
                             {{-- <td>{{ ucfirst($incident->status ?? 'pending') }}</td> --}}
                           

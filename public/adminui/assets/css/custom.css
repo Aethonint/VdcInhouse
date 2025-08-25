@@ -284,3 +284,81 @@ border-bottom: 1px solid #00467A;
     color: white !important;
 }
 
+
+
+
+
+
+
+/* Sidebar Parent Menu Background */
+.sidebar-wrapper .metismenu > li > a {
+    background-color: #144272; /* Dark blue for parent menus */
+    color: #ffffff ; /* White text for parent menus */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 4px;
+}
+
+/* Parent Icon and Text */
+.sidebar-wrapper .metismenu > li > a .parent-icon i {
+    color: #ffffff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* On Hover - Parent Menu */
+.sidebar-wrapper .metismenu > li > a:hover {
+    background-color: #1D5D9B; /* Accent blue on hover for parent */
+    color: #ffffff;
+}
+
+/* Active Parent Menu */
+.sidebar-wrapper .metismenu > li.mm-active > a {
+    background-color: #1D5D9B; /* Accent blue for active parent */
+    color: #ffffff;
+}
+
+/* Child Menu Styling */
+.sidebar-wrapper .metismenu ul {
+   
+    padding-left: 10px;
+    margin: 0;
+}
+
+/* Child Menu Links (Inactive) */
+.sidebar-wrapper .metismenu ul li a {
+    color: #A9B7C0; /* Grey text for inactive children */
+    font-size: 14px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* Child Icon */
+.sidebar-wrapper .metismenu ul li a i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Hover on Child */
+.sidebar-wrapper .metismenu ul li a:hover {
+    background-color: #1D5D9B; /* Accent blue on hover */
+    color: #ffffff;
+}
+
+/* Active Child */
+.sidebar-wrapper .metismenu ul li.active > a {
+    background-color: #1D5D9B; /* Accent blue for active child */
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+

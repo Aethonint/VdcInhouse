@@ -29,7 +29,7 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Record #</th>
                                 <th>Assigned Vehicle</th>
                                 <th>Operator</th>
                                 <th>Start Date/Time</th>
@@ -39,7 +39,7 @@
 
                                 <th>Created At</th>
                                 <th>Updated At</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
